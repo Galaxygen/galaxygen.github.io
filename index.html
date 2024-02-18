@@ -1,0 +1,334 @@
+﻿
+﻿﻿
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      <link rel="icon" href="http://mir4kks.narod.ru/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+
+
+        <!-- onload="pageScroll(1000)-->
+<script>
+
+  function pageScroll(sc)
+  { 
+    window.scroll(0,sc); 
+  } 
+  function hexrc(val)
+  {
+    rc=Math.round(val*Math.random());
+    switch (rc)
+    {
+      case  10: rc='a';
+  	break;
+      case  11: rc='b';
+  	break;
+      case  12: rc='c';
+  	break;
+      case  13: rc='d';
+  	break;
+      case  14: rc='e';
+  	break;
+      case  15: rc='f';
+  	break;
+      default:
+  	break;
+    }
+    return rc;
+  }
+  function tr(htmlstring)
+  {
+    rh=Math.floor(200*Math.random());
+    r1=hexrc(1);
+    r2=hexrc(0);
+    g1=hexrc(1);
+    g2=hexrc(0);
+    b1=hexrc(3);
+    b2=hexrc(3);
+    document.write("<tr>");
+    document.write("<td width="+screen.width+" height="+rh+" bgColor=#"+r1+r2+g1+g1+b1+b2+" valign=top>");
+    document.write(htmlstring);
+    document.write("</td>");
+    document.write("</tr>");
+  }
+  function fImgSrc()
+  {
+    event.target.src="5"+hexrc(3)+".jpg"
+  }
+  
+  document.bgColor=hexrc(4)+hexrc(4)+hexrc(4)+hexrc(4)+hexrc(4)+hexrc(4);
+
+  var indexValue = 1;
+  //showImg(indexValue);
+  function btm_slide(e, id){showImg(indexValue = e, id);}
+  function side_slide(e, id){showImg(indexValue += e, id);}
+  function showImg(e, id){
+    var i;
+    const img = document.querySelectorAll('img#'+id);
+    const slider = document.querySelectorAll('.btm-slides span#'+id);
+    if(e > img.length){indexValue = 1}
+    if(e < 1){indexValue = img.length}
+    for(i = 0; i < img.length; i++){img[i].style.display = "none";}
+    for(i = 0; i < slider.length; i++){slider[i].style.background = "rgba(255,255,255,0.1)";}
+    img[indexValue-1].style.display = "block";
+    slider[indexValue-1].style.background = "white";
+    
+    //img[indexValue-1].onclick = function(){   this.style.transform = "scale(1.5)";   this.style.transition = "transform 0.25s ease";  }
+    //img[indexValue-1].onclick = function(){window.open(this.src,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1090px, height=550px, top=25px left=120px'); return false;}
+    
+  }
+  
+  function ModalOpen(imgSrc){window.open(imgSrc,'targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1700px, height=1000px, top=10px left=10px'); return false;}
+
+</script>
+
+
+  <div style="position:absolute; top:0; left:0; font-size:50px; z-index:0">
+    <table CELLSPACING=0>
+      <script language=JavaScript>
+        for (var i = 0; i < 30; i++) {tr("");}
+      </script>
+    </table>
+  </div>
+  
+  <div style="position:absolute; top:50; left:50; color:#ccffff; font-size:20px; z-index:1">
+      <table CELLPADDING="20">  
+          <tbody>    
+              <tr>
+                <td>        
+                  <p align="left" class="dline">        
+                    <font face="Arial" size="6" color=#ccffff> <a>МирА - параметрическая модель спиральных, линзовидных и эллиптических галактик</a></font></br>
+                    </br>
+                    <font face="Arial" size="3" color=#ffffff line-height: 1.5;> <a>
+                    МирА - генератор галактик со своеобразной морфологической классификацией. Форма галактик (например размер перемычки, количество рукавов, скрученность спиралей и другие) описывается количественно, с помощью примерно десятка основных свойств в параметрической модели галактик эллиптического-линзовидного-спирального типа.</br>
+                    Внешний вид созданной по заданному описанию галактики не имеет фотографического сходства с настоящими изображениями, но образное сходство довольно велико.</br>
+                    Применённая параметрическая модель никаким образом не связана и не основана на каких-либо теориях формирования галактик (например теории волн плотности Линя и Шу), она просто представляет некоторое количественное описание внешнего вида.</br>
+                    Расстояния между галактиками, соотношения размеров галактик и звёзд, их количество и т. д. так же не соответствую действительным (это возможно только бы мешало восприятию) - программа в этом отношении работает как теллурий.</br>
+                    МирА позволяет получить изображение галактики по своему собственному описанию, рассмотреть его с любой стороны, в том числе и в стереорежиме.</br>
+                    Программа скорее всего никогда не будет доработана до бета-версии, и поэтому она распространяется в состоянии "вечная альфа", со всеми недоработками, ошибками, неудобствами и т.д.</a></font>
+                  </p>
+                </td>    
+              </tr>    
+              
+              <tr>
+                <td>        
+                  <table valign="center" CELLPADDING="40">          
+                    <tbody>            
+                      <tr>
+                        <td width="800">
+                    
+                          <div class="content">
+                            <div class="images">
+                              <img src="50.jpg" id="Id1" onclick='ModalOpen("b50.jpg")'>
+                              <img src="51.jpg" id="Id1" onclick='ModalOpen("b51.jpg")'>
+                              <img src="52.jpg" id="Id1" onclick='ModalOpen("b52.jpg")'>
+                              <img src="53.jpg" id="Id1" onclick='ModalOpen("b53.jpg")'>
+                              <img src="54.jpg" id="Id1" onclick='ModalOpen("b54.jpg")'>
+                              <img src="55.jpg" id="Id1" onclick='ModalOpen("b55.jpg")'>
+                              <img src="56.jpg" id="Id1" onclick='ModalOpen("b56.jpg")'>
+                              <img src="57.jpg" id="Id1" onclick='ModalOpen("b57.jpg")'>
+                              <img src="58.jpg" id="Id1" onclick='ModalOpen("b58.jpg")'>
+                              <img src="59.jpg" id="Id1" onclick='ModalOpen("b59.jpg")'>
+                            </div>
+                            <div class="btm-slides">
+                              <span onclick="btm_slide(1, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(2, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(3, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(4, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(5, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(6, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(7, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(8, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(9, 'id1')" id="Id1"></span>
+                              <span onclick="btm_slide(10,'id1')" id="Id1"></span>
+                            </div>
+                            <div class="sliders left" onclick="side_slide(-1, 'id1')">
+                              <span class="fas fa-angle-left"></span>
+                            </div>
+                            <div class="sliders right" onclick="side_slide(1, 'id1')">
+                              <span class="fas fa-angle-right"></span>
+                            </div>
+                          </div>
+
+                          <script language=JavaScript>
+                            showImg(1, 'id1');
+                          </script>
+
+                          <!--script language=JavaScript>
+                            document.write("<img src=5"+hexrc(3)+".jpg WIDTH=640 HEIGHT=352 HSPACE=0 vSPACE=0 ALIGN=left ALT='' onclick='fImgSrc()'><br>");
+                          </script-->
+                        </td>
+                        <td>                
+                          <p align="left" class="dline">        
+                            <font face="Arial" size="3" color=#ccffff>                
+                              'МИР А' - новая версия параметрического генератора галактик.</br>
+                              версия для Windows               
+                              <a href=http://mir4kks.narod.ru/mirA.zip>MirA.zip (26 мб)</a> (zip-архив, инсталляция не требуется)</br>
+                              версия для Android 
+                              <a href=http://mir4kks.narod.ru/mirA.apk>MirA.apk (22 мб)</a> (47 мб в памяти телефона)</br>
+                              </br>                
+                              Описание параметрической модели спиральных галактик в формате 
+                              <a href=opisanie13042019.docx target="_blank">doc</a> или 
+                              <a href=opisanie13042019.pdf target="_blank">pdf</a></br>
+                              <a href=grf.zip>Графики к описанию</a> в формате Graph</br>                
+                              </br>
+                              <a href=opisanie.txt target="_blank">Здесь</a> Вы можете скачать описание программы.</br>                
+                              </br>
+                              Пожелания, замечания, вопросы - по почте, на адрес <a href=mailto:mir4kks@yandex.ru>mir4kks@yandex.ru</a> или в <a href=http://mir4kks.narod.ru/gb/ target="_blank"> гостевой книге</a>                
+                            </font>
+                          </p>
+                        </td>            
+                      </tr>            
+
+
+                      </br>
+                      <tr>
+                        <td>
+                          </br>                
+                    
+                          <div class="content">
+                            <div class="images">
+                              <img src="20.jpg" id="Id2" onclick='ModalOpen("b20.jpg")'>
+                              <img src="21.jpg" id="Id2" onclick='ModalOpen("b21.jpg")'>
+                              <img src="22.jpg" id="Id2" onclick='ModalOpen("b22.jpg")'>
+                              <img src="23.jpg" id="Id2" onclick='ModalOpen("b23.jpg")'>
+                              <img src="24.jpg" id="Id2" onclick='ModalOpen("b24.jpg")'>
+                              <img src="25.jpg" id="Id2" onclick='ModalOpen("b25.jpg")'>
+                              <img src="26.jpg" id="Id2" onclick='ModalOpen("b26.jpg")'>
+                              <img src="27.jpg" id="Id2" onclick='ModalOpen("b27.jpg")'>
+                              <img src="28.jpg" id="Id2" onclick='ModalOpen("b28.jpg")'>
+                              <img src="29.jpg" id="Id2" onclick='ModalOpen("b29.jpg")'>
+                            </div>
+                            <div class="btm-slides">
+                              <span onclick="btm_slide(1, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(2, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(3, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(4, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(5, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(6, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(7, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(8, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(9, 'id2')" id="Id2"></span>
+                              <span onclick="btm_slide(10,'id2')" id="Id2"></span>
+                            </div>
+                            <div class="sliders left" onclick="side_slide(-1, 'id2')">
+                              <span class="fas fa-angle-left"></span>
+                            </div>
+                            <div class="sliders right" onclick="side_slide(1, 'id2')">
+                              <span class="fas fa-angle-right"></span>
+                            </div>
+                          </div>
+
+                          <script language=JavaScript>
+                            showImg(1, 'id2');
+                          </script>
+
+                          <!--script language=JavaScript>
+                            document.write("<img src="+hexrc(6)+".jpg WIDTH=640 HEIGHT=352 HSPACE=0 vSPACE=0 ALIGN=left ALT='для просмотра других снимков обновите страницу'><br>");
+                          </script-->		
+                            </br>
+                        </td>
+                        <td>                
+                          <font face="Arial" size="3" color=#ccffff>'МИР 4' - предыдущая версия программы. Вы можете скачать файл с архивом программы, инсталляция не требуется: 
+                            <a href=mir4.rar>rar-архив (3,5 мб)</a> 
+                            <a href=mir4.zip>zip-архив (4,2 мб)</a>                
+                            </br>	  	
+                            </br>                
+                            <a href=opisanie4.txt target="_blank">Здесь</a> можно скачать описание программы.                 
+                          </font>
+                        </td>            
+                      </tr>	    
+                            
+                            <tr>
+                            </tr>
+
+                            <tr>
+                              <td>	        
+                                            <p align="left">	        
+                                                    </br>	        
+                                                    </br>	        
+                                                    </br>	        
+                                                    </br>	        
+                                                <font face="Verdana" size="3" color=#ccffff>	          новости сайта 		
+                                                    </br>	        
+                                                    </br>	        
+                                                </font>		
+                                                <font face="Verdana" size="2" color=#ccffff>
+                                                                16.02.24
+                                                    </br>		Новая версия МирА 5.6 для Android и Windows.
+                                                    </br>  		Добавлен анаглифный режим стереоизображения. Цветоделение по 4 алгоритмам - обычное, серое с усилением объёма, оптимальное и с усилением цветопередачи.
+                                                    </br>  		Переделана оптимизация - программа, насколько возможно обсчитывает только то, что отображается.
+                                                    </br>  		Дополнены и расширены до шести панелей настройки программы.
+                                                    </br>
+                                                    </br>       22.12.23
+                                                    </br>		Доступна новая версия МирА 5.5 для Android и Windows.
+                                                    </br>  		Добавлены настройки по выбранной планете  - размер, скорости вращения вокруг оси и вокруг звезды, наклон оси, наклон, эксцентриситет и радиус орбиты, карта поверхности, цвет, видимость колец.
+                                                    </br>  		Добавлены тени от колец на планете, добавлена анимация колец и звёздной атмосферы.
+                                                    </br>  		Планеты меняют уровень детализации - сохраняют круглую форму при любом приближении.
+                                                    </br>  		Устранены рывки при приближении к планете.
+                                                    </br>
+                                                    </br>  		18.04.23
+                                                    </br>		Доступна новая версия МирА 5.4 для Android и Windows.
+                                                    </br>  		Добавлены кольца у планет-гигантов.
+                                                    </br>  		Устранены фризы при создании новых галактик (рывки при больших перемещениях).
+                                                    </br>  		Добавлен слой с узором осевых линий галактики.
+                                                    </br>  		Добавлено отслеживание планет.
+                                                    </br>  		Изменено отображение орбит.
+                                                    </br>  		Исправлено неравномерное распределение вещества по рукавам.
+                                                    </br>  		Исправлены ошибки во вращении планет (оси и угловые скорости).
+                                                    </br>
+                                                    </br>  		25.01.23
+                                                    </br>		Доступна новая версия МирА 5.3 для Android и Windows. Исправлены некоторые ошибки.
+                                                    </br>
+                                                    </br>  		10.12.22
+                                                    </br>  		Доступна новая версия МирА 5.2 для Android и Windows. Добавлена настройка по температуре/цвету ближайшей звезды. Исправлены некоторые ошибки во вращении планет.
+                                                    </br>
+                                                    </br>		11.11.22
+                                                    </br>		Доступна новая версия МирА 5.1 для Android и Windows. Программа полностью переписана на Unity. Добавлено множество новых возможностей, изменён внешний вид.
+                                                    </br>
+                                                    </br>		26.10.19
+                                                    </br>		В новой версии 2А.1 применена новая параметрическая модель - существенно изменён внешний вид галактик. Сборка для скринсейвера временно недоступна.
+                                                    </br>
+                                                    </br>		28.04.19
+                                                    </br>		Добавлено описание параметрической модели
+                                                    <a href=opisanie13042019.docx target="_blank">doc</a> или
+                                                    <a href=opisanie13042019.pdf target="_blank">pdf</a>
+                                                    </br>
+                                                    </br>		30.12.08
+                                                    </br>		В новой версии 1.7.2 появилась пыль в спиральных галактиках. Цвет галактического центра - желтоватый.
+                                                    </br>
+                                                    </br>		19.11.08
+                                                    </br>		В новой версии 1.7.1 появились блики от обычных звёзд. Добавлена соответствующая настройка: вид 'бликов на линзах' - нет бликов / только галактики / галактики и звёзды-гиганты / галактики, звёзды-гиганты и звёзды. Вид бликов можно переключать как и прежде - по кнопке F12. У программы появился новый инсталлятор с выборочной установкой.
+                                                    </br>
+                                                    </br>		06.11.08
+                                                    </br>		В версии 1.6.3 появилось управление мышью. Добавлена настройка анаглифной стереопары (красно-голубая, оранжево-жёлтая и др.). Появился новый вид движения для скринсейвера - перелёт от галактики к галактике. Добавился выбор движения для скринсейвера - обычное, "луч", "перелёты", "просмотр ближайшей", а также случайный выбор движения и переключение вида движения время от времени.
+                                                    </br>
+                                                    </br>		24.10.08
+                                                    </br>		В версии 1.5.1 появилось анаглифное стереоизображение (нужны красно-голубые очки как в кинотеатре). Включение/выключение - по Ctrl+ScrollLock, настройка - ScrollLock+лево/право.
+                                                    </br>
+                                                    </br>		15.10.08
+                                                    </br>		В версии 1.4.3 появились настройки яркости и размеров бликов. Метка середины орбиты - на кнопке F11.
+                                                    </br>
+                                                    </br>		11.10.08
+                                                    </br>		В версии 1.4.2 галактики расположены друг за другом, а не собраны в скопления.
+                                                    </br>
+                                                    </br>		03.10.08
+                                                    </br>		В версии 1.3.2 включен эффект бликов на линзах. Включение/выключение - кнопкой F12
+                                                    </br>
+                                                    </br>		29.09.08
+                                                    </br>		В версии 1.2.13 добавлен поиск ближайшей галактики для режима с поворотом вида. В скринсейвере этот режим включён по умолчанию
+                                                </font>	        
+                                            </p>	      </td>	    
+                                    </tr>          
+                                </tbody>        
+                            </table>      </td>    
+                    </tr>  
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
